@@ -1,15 +1,15 @@
 variable "name" {
-  description = "The name of the cluster, unique within the project and zone"
+    description = "The name of the cluster, unique within the project and zone"
 }
 
 variable "description" {
-  description = "Cluster description"
+    description = "Cluster description"
 	default     = "K8s cluster"
 }
 
 variable "min_master_version" {
-  description = "Minimum kubernetes master version"
-	default     = "1.12.6-gke.11"
+    description = "Minimum kubernetes master version"
+	default     = "1.12.7-gke.24"
 }
 
 variable "master_ipv4_cidr_block" {
@@ -23,17 +23,17 @@ variable "enable_private_master" {
 }
 
 variable "zone" {
-  description = "The zone the master and nodes specified in initial_node_count should be created in"
+    description = "The zone the master and nodes specified in initial_node_count should be created in"
 }
 
 variable "additional_zones" {
-  description = "The node pools will be replicated automatically to the additional zones"
+    description = "The node pools will be replicated automatically to the additional zones"
 	type = "list"
 	default = []
 }
 
 variable "network" {
-  description = "The name or self_link of the Google Compute Engine network to which the cluster is connected"
+    description = "The name or self_link of the Google Compute Engine network to which the cluster is connected"
 }
 
 variable "subnetwork" {

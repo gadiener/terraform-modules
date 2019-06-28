@@ -1,16 +1,16 @@
 resource "google_container_cluster" "cluster" {
-	provider 											= "google-beta"
+	provider = "google-beta"
 
-	name               						= "${var.name}"
-  description        						= "${var.description}"
-  location               				= "${var.zone}"
-	node_locations 								= "${var.additional_zones}"
-	network 											= "${var.network}"
-	subnetwork 										= "${var.subnetwork}"
-	min_master_version						= "${var.min_master_version}"
+	name = "${var.name}"
+    description = "${var.description}"
+    location = "${var.zone}"
+	node_locations = "${var.additional_zones}"
+	network = "${var.network}"
+	subnetwork = "${var.subnetwork}"
+	min_master_version = "${var.min_master_version}"
 
-	remove_default_node_pool 			= true
-	initial_node_count 						= 1
+	remove_default_node_pool = true
+	initial_node_count = 1
 
 	logging_service = "logging.googleapis.com/kubernetes"
 	monitoring_service = "monitoring.googleapis.com/kubernetes"
@@ -25,8 +25,8 @@ resource "google_container_cluster" "cluster" {
 
 	# Setting an empty username and password explicitly disables basic auth
 	master_auth {
-    username 		= ""
-    password 		= ""
+        username = ""
+        password = ""
 		client_certificate_config {
 			issue_client_certificate = false
 		}
@@ -59,13 +59,13 @@ resource "google_container_cluster" "cluster" {
 		}
 	}
 
-  addons_config {
-    kubernetes_dashboard {
-      disabled = true
-    }
-    http_load_balancing {
-      disabled = false
-    }
+    addons_config {
+        kubernetes_dashboard {
+            disabled = true
+        }
+        http_load_balancing {
+            disabled = false
+        }
 		network_policy_config {
 			disabled = false
 		}
@@ -78,7 +78,7 @@ resource "google_container_cluster" "cluster" {
 		cloudrun_config {
 			disabled = true
 		}
-  }
+    }
 
 	resource_labels = "${var.labels}"
 }
