@@ -6,11 +6,11 @@ A set of Terraform modules for configuring production infrastructure with Google
 
 ```
 terraform {
-	required_version = ">= 0.11"
+  required_version = ">= 0.11"
 
-    required_providers = {
-        google = ">= 2.9.1"
-		google-beta = ">= 2.9.1"
-    }
+  required_providers = {
+    google = ">= 2.9.1"
+    google-beta = ">= 2.9.1"
+  }
 }
 ```
