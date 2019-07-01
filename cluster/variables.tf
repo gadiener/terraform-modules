@@ -9,7 +9,7 @@ variable "description" {
 
 variable "min_master_version" {
     description = "Minimum kubernetes master version"
-	default     = "1.12.7-gke.24"
+	default     = "1.12.5-gke.10"
 }
 
 variable "master_ipv4_cidr_block" {
