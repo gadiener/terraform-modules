@@ -2,8 +2,8 @@ resource "google_container_cluster" "cluster" {
 	provider = "google-beta"
 
 	name = "${var.name}"
-    description = "${var.description}"
-    location = "${var.zone}"
+  description = "${var.description}"
+  location = "${var.zone}"
 	node_locations = "${var.additional_zones}"
 	network = "${var.network}"
 	subnetwork = "${var.subnetwork}"
