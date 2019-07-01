@@ -19,7 +19,7 @@ resource "google_container_cluster" "cluster" {
 
 	ip_allocation_policy {
 		use_ip_aliases = true
-		cluster_secondary_range_name 	= "${var.pods_range_name}"
+		cluster_secondary_range_name = "${var.pods_range_name}"
 		services_secondary_range_name = "${var.services_range_name}"
 	}
 
@@ -59,6 +59,10 @@ resource "google_container_cluster" "cluster" {
 		}
 	}
 
+    vertical_pod_autoscaling {
+        enabled = true
+    }
+
     addons_config {
         kubernetes_dashboard {
             disabled = true
@@ -66,18 +70,18 @@ resource "google_container_cluster" "cluster" {
         http_load_balancing {
             disabled = false
         }
-		network_policy_config {
-			disabled = false
-		}
-		istio_config {
-			disabled = "${!var.istio}"
-		}
-		horizontal_pod_autoscaling {
-			disabled = false
-		}
-		cloudrun_config {
-			disabled = true
-		}
+        network_policy_config {
+        disabled = false
+        }
+        istio_config {
+        disabled = "${!var.istio}"
+        }
+        horizontal_pod_autoscaling {
+        disabled = false
+        }
+        cloudrun_config {
+        disabled = true
+        }
     }
 
 	resource_labels = "${var.labels}"
