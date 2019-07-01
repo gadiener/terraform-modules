@@ -2,8 +2,8 @@ resource "google_container_cluster" "cluster" {
 	provider = "google-beta"
 
 	name = "${var.name}"
-    description = "${var.description}"
-    location = "${var.zone}"
+  description = "${var.description}"
+  location = "${var.zone}"
 	node_locations = "${var.additional_zones}"
 	network = "${var.network}"
 	subnetwork = "${var.subnetwork}"
@@ -25,8 +25,8 @@ resource "google_container_cluster" "cluster" {
 
 	# Setting an empty username and password explicitly disables basic auth
 	master_auth {
-        username = ""
-        password = ""
+    username = ""
+    password = ""
 		client_certificate_config {
 			issue_client_certificate = false
 		}
@@ -59,30 +59,30 @@ resource "google_container_cluster" "cluster" {
 		}
 	}
 
-    vertical_pod_autoscaling {
-        enabled = true
-    }
+  vertical_pod_autoscaling {
+    enabled = true
+  }
 
-    addons_config {
-        kubernetes_dashboard {
-            disabled = true
-        }
-        http_load_balancing {
-            disabled = false
-        }
-        network_policy_config {
-        disabled = false
-        }
-        istio_config {
-        disabled = "${!var.istio}"
-        }
-        horizontal_pod_autoscaling {
-        disabled = false
-        }
-        cloudrun_config {
-        disabled = true
-        }
+  addons_config {
+    kubernetes_dashboard {
+      disabled = true
     }
+    http_load_balancing {
+      disabled = false
+    }
+    network_policy_config {
+      disabled = false
+    }
+    istio_config {
+      disabled = "${!var.istio}"
+    }
+    horizontal_pod_autoscaling {
+      disabled = false
+    }
+    cloudrun_config {
+      disabled = true
+    }
+  }
 
 	resource_labels = "${var.labels}"
 }
