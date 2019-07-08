@@ -86,12 +86,3 @@ resource "google_container_cluster" "cluster" {
 
 	resource_labels = "${var.labels}"
 }
-
-
-
-
-
-
-
-
-
