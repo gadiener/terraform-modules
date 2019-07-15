@@ -67,6 +67,6 @@ variable "labels" {
 
 variable "taint" {
   description = "Add a taint to a node"
-  type        = list(string)
+  type        = list
   default     = []
 }
