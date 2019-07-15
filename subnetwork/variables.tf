@@ -21,6 +21,6 @@ variable "cidr_range" {
 
 variable "secondary_ip_ranges" {
   description = "Subnetwork secondary ip cidr ranges"
-  type        = list(string)
+  type        = list
   default     = []
 }
