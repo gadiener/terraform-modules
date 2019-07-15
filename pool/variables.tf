@@ -22,16 +22,16 @@ variable "cluster" {
 
 variable "oauth_scopes" {
   description = "Oauth scope on Google AMI"
-	type = "list"
-	default = [
-		"https://www.googleapis.com/auth/compute",
-		"https://www.googleapis.com/auth/devstorage.read_only",
-		"https://www.googleapis.com/auth/logging.write",
-		"https://www.googleapis.com/auth/monitoring",
-		"https://www.googleapis.com/auth/servicecontrol",
-		"https://www.googleapis.com/auth/service.management.readonly",
-		"https://www.googleapis.com/auth/trace.append"
-	]
+  type        = list(string)
+  default = [
+    "https://www.googleapis.com/auth/compute",
+    "https://www.googleapis.com/auth/devstorage.read_only",
+    "https://www.googleapis.com/auth/logging.write",
+    "https://www.googleapis.com/auth/monitoring",
+    "https://www.googleapis.com/auth/servicecontrol",
+    "https://www.googleapis.com/auth/service.management.readonly",
+    "https://www.googleapis.com/auth/trace.append",
+  ]
 }
 
 variable "machine_type" {
@@ -55,18 +55,18 @@ variable "image_type" {
 }
 
 variable "preemptible" {
-	description = "Use preemptible nodes"
-	default     = false
+  description = "Use preemptible nodes"
+  default     = false
 }
 
 variable "labels" {
-	description = "The Kubernetes labels to be applied to each node"
-	type = "map"
-	default = {}
+  description = "The Kubernetes labels to be applied to each node"
+  type        = map(string)
+  default     = {}
 }
 
 variable "taint" {
-	description = "Sdd a taint to a node"
-	type = "list"
-	default = []
+  description = "Add a taint to a node"
+  type        = list(string)
+  default     = []
 }
