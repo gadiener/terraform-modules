@@ -45,8 +45,13 @@ variable "disk_type" {
 }
 
 variable "disk_size_gb" {
-  description = "Disk of which size to attach to the nodes in the pool "
+  description = "Disk of which size to attach to the nodes in the pool"
   default     = "50"
+}
+
+variable "local_ssd_count" {
+  description = "The amount of local SSD disks that will be attached to each cluster node"
+  default     = "0"
 }
 
 variable "image_type" {
