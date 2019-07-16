@@ -17,24 +17,24 @@ variable "priority" {
 
 variable "allow" {
   description = "The protocol and port to allow"
-  type = "list"
-	default = []
+  type        = list
+  default     = []
 }
 
 variable "source_ranges" {
   description = "A list of source CIDR ranges that this firewall applies to"
-  type = "list"
-	default     = []
+  type        = list(string)
+  default     = []
 }
 
 variable "source_tags" {
   description = "A list of source tags for this firewall rule"
-  type = "list"
-	default     = []
+  type        = list
+  default     = []
 }
 
 variable "target_tags" {
   description = "A list of target tags for this firewall rule"
-	type = "list"
+  type        = list
   default     = []
 }

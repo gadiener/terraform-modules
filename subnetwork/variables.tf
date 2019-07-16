@@ -4,7 +4,7 @@ variable "name" {
 
 variable "description" {
   description = "Subnetwork description"
-	default = ""
+  default     = ""
 }
 
 variable "region" {
@@ -21,6 +21,6 @@ variable "cidr_range" {
 
 variable "secondary_ip_ranges" {
   description = "Subnetwork secondary ip cidr ranges"
-	type = "list"
-	default = []
+  type        = list
+  default     = []
 }
