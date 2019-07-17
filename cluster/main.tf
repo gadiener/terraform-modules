@@ -12,6 +12,8 @@ resource "google_container_cluster" "cluster" {
   remove_default_node_pool = true
   initial_node_count       = 1
 
+  database_encryption = var.database_encryption
+
   logging_service    = "logging.googleapis.com/kubernetes"
   monitoring_service = "monitoring.googleapis.com/kubernetes"
 

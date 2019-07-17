@@ -76,6 +76,16 @@ variable "cluster_autoscaling" {
   ]
 }
 
+variable "database_encryption" {
+  description = "ETCD encryption by GKE"
+  type = list
+
+  default = {
+    encrypted = false
+    #kms-id  = "kms-id-bla"
+  }
+}
+
 variable "pod_security_policy_config" {
   description = "Enable pod security policy"
   default     = false
