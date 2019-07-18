@@ -78,11 +78,11 @@ variable "cluster_autoscaling" {
 
 variable "database_encryption" {
   description = "ETCD encryption by GKE"
-  type = list
+  type        = map
 
-  default = {
-    encrypted = false
-    #kms-id  = "kms-id-bla"
+  default     = {
+    state     = "decrypted"
+    key_name  = "kms-id-bla"
   }
 }
 
