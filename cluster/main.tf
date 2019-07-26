@@ -13,13 +13,17 @@ resource "google_container_cluster" "cluster" {
   initial_node_count       = 1
 
   dynamic "database_encryption" {
-    for_each = var.database_encryption
+    for_each = [for s in var.database_encryption: {
+      state   = s.state
+      key_name = s.key_name
+    }]
+
     content {
       state         = database_encryption.value.state
       key_name      = database_encryption.value.key_name
     }
   }
-  
+
   logging_service    = "logging.googleapis.com/kubernetes"
   monitoring_service = "monitoring.googleapis.com/kubernetes"
 
