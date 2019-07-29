@@ -82,7 +82,7 @@ variable "database_encryption" {
 
   default     = [{
     state     = "DECRYPTED"
-    key_name  = "kms-id-bla"
+    key_name  = ""
   }]
 }
 
