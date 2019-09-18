@@ -64,6 +64,16 @@ variable "preemptible" {
   default     = false
 }
 
+variable "auto_upgrade" {
+  description = "Activate auto upgrade on nodes"
+  default     = true
+}
+
+variable "auto_repair" {
+  description = "Activate auto repair on nodes"
+  default     = true
+}
+
 variable "labels" {
   description = "The Kubernetes labels to be applied to each node"
   type        = map(string)
