@@ -41,7 +41,12 @@ variable "subnetwork" {
 }
 
 variable "istio" {
-  description = "Enable istio"
+  description = "Enable Istio"
+  default     = false
+}
+
+variable "cloudrun" {
+  description = "Enable Cloud Run"
   default     = false
 }
 
