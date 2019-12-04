@@ -113,7 +113,7 @@ resource "google_container_cluster" "cluster" {
       disabled = false
     }
     cloudrun_config {
-      disabled = true == var.cloudrun
+      disabled = false == var.cloudrun
     }
   }
 
