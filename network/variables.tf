@@ -11,3 +11,7 @@ variable "auto_create_subnetworks" {
   description = "Auto create subnetworks"
   default     = false
 }
+
+variable "project_id" {
+  description = "GCP Project Id"
+}

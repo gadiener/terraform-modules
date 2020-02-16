@@ -38,3 +38,7 @@ variable "target_tags" {
   type        = list
   default     = []
 }
+
+variable "project_id" {
+  description = "GCP Project Id"
+}
