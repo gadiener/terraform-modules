@@ -4,7 +4,6 @@ resource "google_compute_firewall" "default" {
   description = var.description
   network     = var.network
   priority    = var.priority
-  project     = var.project_id
 
   dynamic "allow" {
     for_each = var.allow
