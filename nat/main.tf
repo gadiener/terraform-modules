@@ -30,6 +30,8 @@ resource "google_compute_router_nat" "router-nat" {
   min_ports_per_vm = var.min_ports_per_vm
   tcp_established_idle_timeout_sec = var.tcp_established_idle_timeout_sec
   tcp_transitory_idle_timeout_sec = var.tcp_transitory_idle_timeout_sec
+  udp_idle_timeout_sec = "30"
+  icmp_idle_timeout_sec = "30"
 
   subnetwork {
     name                    = var.subnetwork
