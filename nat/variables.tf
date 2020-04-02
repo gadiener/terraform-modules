@@ -29,6 +29,16 @@ variable "tcp_transitory_idle_timeout_sec" {
   default = 30
 }
 
+variable "udp_idle_timeout_sec" {
+  description = "Timeout in seconds for UDP"
+  default = 30
+}
+
+variable "icmp_idle_timeout_sec" {
+  description = "Timeout in seconds for ICMP"
+  default = 30
+}
+
 variable "address_count" {
   description = "Address count"
   default     = 1
