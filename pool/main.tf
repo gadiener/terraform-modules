@@ -17,10 +17,10 @@ resource "google_container_node_pool" "pool" {
 
   node_config {
     image_type   		= "COS"
-    machine_type 		= "${var.machine_type}"
-    disk_size_gb 		= "${var.disk_size_gb}"
-		disk_type 			= "${var.disk_type}"
-		local_ssd_count = "${var.local_ssd_count}"
+    machine_type 		= var.machine_type
+    disk_size_gb 		= var.disk_size_gb
+		disk_type 			= var.disk_type
+		local_ssd_count = var.local_ssd_count
 
     metadata = {
       disable-legacy-endpoints = "true"
