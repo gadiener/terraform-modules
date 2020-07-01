@@ -117,5 +117,13 @@ resource "google_container_cluster" "cluster" {
     }
   }
 
+  resource_usage_export_config {
+      enable_network_egress_metering = var.enable_network_egress_metering
+
+      bigquery_destination {
+        dataset_id = "gke_cluster_resource_consumption_usage"
+      }
+  }
+
   resource_labels = var.labels
 }

@@ -108,6 +108,12 @@ variable "master_authorized_networks_cidr" {
   ]
 }
 
+variable "enable_network_egress_metering" {
+  description = "Setting for deciding the monitoring of resources"
+  type        = bool
+  default     = false
+}
+
 variable "labels" {
   description = "The Kubernetes labels to be applied to cluster resources"
   type        = map(string)
