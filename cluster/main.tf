@@ -117,5 +117,13 @@ resource "google_container_cluster" "cluster" {
     }
   }
 
+  resource_usage_export_config {
+      enable_network_egress_metering = var.enable_network_egress_metering
+
+      bigquery_destination {
+        dataset_id = var.bigquery_destination_dataset_id
+      }
+  }
+
   resource_labels = var.labels
 }

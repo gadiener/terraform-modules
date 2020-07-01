@@ -108,6 +108,18 @@ variable "master_authorized_networks_cidr" {
   ]
 }
 
+variable "enable_network_egress_metering" {
+  description = "Setting for deciding the monitoring of resources"
+  type        = bool
+  default     = false
+}
+
+variable "bigquery_destination_dataset_id" {
+  description = "Destination for the monitoring of resources"
+  type        = string
+  default     = "gke_cluster_resource_consumption_usage"
+}
+
 variable "labels" {
   description = "The Kubernetes labels to be applied to cluster resources"
   type        = map(string)
