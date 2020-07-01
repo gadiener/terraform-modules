@@ -121,7 +121,7 @@ resource "google_container_cluster" "cluster" {
       enable_network_egress_metering = var.enable_network_egress_metering
 
       bigquery_destination {
-        dataset_id = "gke_cluster_resource_consumption_usage"
+        dataset_id = var.bigquery_destination_dataset_id
       }
   }
 
