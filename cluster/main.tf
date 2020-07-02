@@ -45,7 +45,6 @@ resource "google_container_cluster" "cluster" {
   }
 
   ip_allocation_policy {
-    use_ip_aliases                = true
     cluster_secondary_range_name  = var.pods_range_name
     services_secondary_range_name = var.services_range_name
   }
@@ -97,9 +96,6 @@ resource "google_container_cluster" "cluster" {
   }
 
   addons_config {
-    kubernetes_dashboard {
-      disabled = true
-    }
     http_load_balancing {
       disabled = false
     }
