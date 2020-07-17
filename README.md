@@ -25,7 +25,7 @@ Define a PubSub this way:
 
 ```
 module "my_queue" {
-  source       = "git::https://github.com/jobtome-labs/terraform-modules.git//pubsub-with-iam?ref=v3.2.0""
+  source       = "git::https://github.com/jobtome-labs/terraform-modules.git//pubsub-with-iam?ref=v3.2.0"
 
   project      = "my-gcp-project"
   name         = "my-pubsub"
