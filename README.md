@@ -47,7 +47,7 @@ module "my_queue" {
 }
 ```
 
-By default it makes *one* topic and *one* subscription with the same name. In case of import of resources made prior to tf, there is a possibility to override this setting and name the subscription differently (`name_subscription`).
+By default it makes *one* topic and *one* subscription with the same name. In case of import of resources made prior to managing the infrastructure with terraform, there is a possibility to override this setting and name the subscription differently (`name_subscription`).
 
 `roles_topic` is an object containing all possible roles along with an array of SA with that privilege; in case we want nobody with that permission, we set an empty array.
 Note: We want this way because if a SA gets an additional permission in the topic/subscription (e.g. via GCP console), terraform will notice and will remove it at the next `terraform apply`.
