@@ -52,11 +52,11 @@ By default it makes *one* topic and *one* subscription with the same name. In ca
 `roles_topic` is an object containing all possible roles along with an array of SA with that privilege; in case we want nobody with that permission, we set an empty array.
 Note: We want this way because if a SA gets an additional permission in the topic/subscription (e.g. via GCP console), terraform will notice and will remove it at the next `terraform apply`.
 
-The same idea applies for `roles_subscription`. Note that for GCP resource 'subscriptions', there is an extra role that is not in the resource 'topic'.
+The same idea applies for `roles_subscription`. Note that for GCP resource 'subscriptions', there is one fewer role than the resource 'topic'.
 
 One can have only a topic by specifying `topic_only = true`. In which case, `roles_subscription` is ignored.
 
-One can have more subscriptions by specifying an array `extra_subscriptions` which contains the following keys:
+One can have more subscriptions by specifying an array `extra_subscriptions` which contains objects with the following keys:
  - `name`
  - `roles`
  - `message_retention_duration`
