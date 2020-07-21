@@ -45,7 +45,6 @@ resource "google_container_cluster" "cluster" {
   }
 
   ip_allocation_policy {
-    use_ip_aliases                = true
     cluster_secondary_range_name  = var.pods_range_name
     services_secondary_range_name = var.services_range_name
   }
@@ -97,9 +96,6 @@ resource "google_container_cluster" "cluster" {
   }
 
   addons_config {
-    kubernetes_dashboard {
-      disabled = true
-    }
     http_load_balancing {
       disabled = false
     }
@@ -115,6 +111,14 @@ resource "google_container_cluster" "cluster" {
     cloudrun_config {
       disabled = false == var.cloudrun
     }
+  }
+
+  resource_usage_export_config {
+      enable_network_egress_metering = var.enable_network_egress_metering
+
+      bigquery_destination {
+        dataset_id = var.bigquery_destination_dataset_id
+      }
   }
 
   resource_labels = var.labels
